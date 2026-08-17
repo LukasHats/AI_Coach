@@ -1,0 +1,11 @@
+name: ultra-coach
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - python-dotenv
+  - pip
+  - pip:
+      - garminconnect
+      - curl_cffi
