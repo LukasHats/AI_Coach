@@ -57,6 +57,7 @@ conda env create -f environment.yml
 conda activate ultra-coach
 cp .env.example .env   # fill in GARMIN_EMAIL / GARMIN_PASSWORD
 python sync.py --backfill 365
+# Adapt your metrics to your sport before running the next line. Claude can inspect the sync.py output to adapt the metrics script to your sport!
 python metrics.py
 ```
 
