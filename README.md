@@ -1,4 +1,4 @@
-# AI Coach 🧑‍🏫
+# AI (CYCLING) Coach 🧑‍🏫
 
 A personal coaching pipeline: pulls your training data from Garmin Connect into a local database,
 crunches it into real numbers, and lets Claude write you a weekly review — grounded in *your*
@@ -10,7 +10,7 @@ involved — the "coach" is just a persona file and a plan file, both read fresh
 
 This particular setup happens to be configured for endurance cycling (power, TSS, the works). The
 coaching layer — persona and plan — is sport-agnostic: swap in your own and it follows those
-instead. The data layer (`sync.py`, `metrics.py`) is not: it pulls cycling-specific Garmin fields
+instead. **The data layer (`sync.py`, `metrics.py`) is not:** it pulls cycling-specific Garmin fields
 (power, cycling FTP, biking cadence) and computes a cycling TSS formula. For another sport, expect
 to adjust those to match what Garmin exposes for it — once `sync.py` has pulled a batch of your
 activities into `data/garmin.db`, Claude Code can inspect the raw fields and adapt the sync/metrics
