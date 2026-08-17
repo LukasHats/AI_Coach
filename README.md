@@ -8,9 +8,13 @@ Built on [python-garminconnect](https://github.com/cyberjunky/python-garminconne
 side, and [Claude Code](https://claude.com/claude-code) as the coach. There's no fine-tuned model
 involved — the "coach" is just a persona file and a plan file, both read fresh every time.
 
-This particular setup happens to be configured for endurance cycling (power, TSS, the works), but
-the pattern itself doesn't care what sport or goal you're chasing — swap in your own plan and
-persona and it follows those instead. Bike, run, swim, something else entirely — up to you.
+This particular setup happens to be configured for endurance cycling (power, TSS, the works). The
+coaching layer — persona and plan — is sport-agnostic: swap in your own and it follows those
+instead. The data layer (`sync.py`, `metrics.py`) is not: it pulls cycling-specific Garmin fields
+(power, cycling FTP, biking cadence) and computes a cycling TSS formula. For another sport, expect
+to adjust those to match what Garmin exposes for it — once `sync.py` has pulled a batch of your
+activities into `data/garmin.db`, Claude Code can inspect the raw fields and adapt the sync/metrics
+code for you.
 
 ## How it fits together
 
